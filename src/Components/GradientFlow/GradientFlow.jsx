@@ -10,7 +10,12 @@ function GradientFlow() {
       <div className="container">
         <h1>GradientFlow</h1>
         <h4>Create beautiful color gradients</h4>
-        <Preview />
+        <Preview
+          color1={colors[0]}
+          color2={colors[1]}
+          color3={colors[2]}
+          color4={colors[3]}
+        />
         <div className="color-container">
           {colors.map((item, index) => {
             return <ColorPreview key={index} color={item} />;

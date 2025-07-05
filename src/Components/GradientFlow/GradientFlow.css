@@ -19,9 +19,10 @@ button{
     align-items: center;
     text-align: center;
     font-size: 15px;
-    border: none;
+    border: 1px solid rgb(173, 172, 172,0.3);
     padding: 10px 15px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .copy-button span{
@@ -32,6 +33,10 @@ button{
 .gen-button span{
     font-size: 18px;
     margin-right: 9px;
+}
+
+.gen-button{
+    background-color: rgb(159, 191, 223);
 }
 
 .button-container{
