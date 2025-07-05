@@ -2,9 +2,17 @@
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    border: 5px solid rgb(150, 149, 149);
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 50px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25), 0 6px 20px 0 rgba(0, 0, 0, 0.23);
+    border: 3px solid rgb(225, 222, 222);
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.14), 0 4px 15px 0 rgba(0, 0, 0, 0.13);
+
+}
+
+.color-preview-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.color-label {
+  margin-top: 8px;
 }

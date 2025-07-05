@@ -3,13 +3,19 @@ import "./GradientFlow.css";
 import ColorPreview from "../ColorPreview/ColorPreview.jsx";
 
 function GradientFlow() {
+  const colors = ["#FCE788", "#F8B864", "#F18744", "#EA5432"];
+
   return (
     <>
       <div className="container">
         <h1>GradientFlow</h1>
         <h4>Create beautiful color gradients</h4>
         <Preview />
-        <ColorPreview />
+        <div className="color-container">
+          {colors.map((item, index) => {
+            return <ColorPreview key={index} color={item} />;
+          })}
+        </div>
         <div className="button-container">
           <button className="copy-button">
             <span class="material-symbols-outlined">content_copy</span>Copy CSS

@@ -1,5 +1,5 @@
 .container{
-    height: 500px;
+    height: 510px;
     width: 750px;
     background-color: white;
     margin: auto;
@@ -41,5 +41,15 @@ button{
 
 .right-buttons{
     display: flex;
-    gap:10px
+    gap:15px
+}
+
+.color-container{
+    width: 750px;
+    height: 95px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 40px;
 }
