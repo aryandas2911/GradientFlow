@@ -38,6 +38,21 @@ function GradientFlow() {
       });
   };
 
+  const generateGradient = () => {
+    const baseHue = Math.floor(Math.random() * 360);
+    const newColors = Array.from({ length: 4 }, (_, i) => {
+      const hue = (baseHue + i * 20) % 360;
+      return `hsl(${hue}, 85%, 65%)`;
+    });
+
+    setColors(newColors);
+
+    if (bgApplied) {
+      const gradient = `linear-gradient(to right, ${newColors.join(", ")})`;
+      document.body.style.backgroundImage = gradient;
+    }
+  };
+
   return (
     <>
       <div className="container">
@@ -62,7 +77,7 @@ function GradientFlow() {
             <button className="apply-button" onClick={applyBackground}>
               {bgApplied ? "Remove Background" : "Apply Background"}
             </button>
-            <button className="gen-button">
+            <button className="gen-button" onClick={generateGradient}>
               <span class="material-symbols-outlined">brush</span>Generate New
             </button>
           </div>
