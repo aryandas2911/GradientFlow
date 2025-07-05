@@ -1,9 +1,30 @@
 import Preview from "../GradientPreview/Preview.jsx";
 import "./GradientFlow.css";
 import ColorPreview from "../ColorPreview/ColorPreview.jsx";
+import { useState } from "react";
 
 function GradientFlow() {
-  const colors = ["#FCE788", "#F8B864", "#F18744", "#EA5432"];
+  const [colors, setColors] = useState([
+    "#FCE788",
+    "#F8B864",
+    "#F18744",
+    "#EA5432",
+  ]);
+
+  const [bgApplied, setBgApplied] = useState(false);
+
+  const applyBackground = () => {
+    if (!bgApplied) {
+      const gradient = `linear-gradient(to right, ${colors.join(", ")})`;
+      document.body.style.backgroundImage = gradient;
+      document.body.style.backgroundAttachment = "fixed";
+      document.body.style.backgroundSize = "cover";
+    } else {
+      document.body.style.backgroundImage = "";
+      document.body.style.backgroundColor = "";
+    }
+    setBgApplied(!bgApplied);
+  };
 
   return (
     <>
@@ -26,7 +47,9 @@ function GradientFlow() {
             <span class="material-symbols-outlined">content_copy</span>Copy CSS
           </button>
           <div className="right-buttons">
-            <button className="apply-button">Apply Background</button>
+            <button className="apply-button" onClick={applyBackground}>
+              {bgApplied ? "Remove Background" : "Apply Background"}
+            </button>
             <button className="gen-button">
               <span class="material-symbols-outlined">brush</span>Generate New
             </button>
