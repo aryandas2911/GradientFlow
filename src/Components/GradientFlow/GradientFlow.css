@@ -1,4 +1,4 @@
-.container{
+.container {
     height: 510px;
     width: 750px;
     background-color: white;
@@ -7,50 +7,85 @@
     padding: 20px 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25), 0 6px 20px 0 rgba(0, 0, 0, 0.23);
+    animation: softEntrance 0.9s cubic-bezier(0.65, -0.25, 0.25, 1.25);
 }
 
-h4{
+@keyframes softEntrance {
+    0% {
+        opacity: 0;
+        transform: scale(0.85) rotate(-2deg);
+    }
+    60% {
+        transform: scale(1.03) rotate(1deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotate(0);
+    }
+}
+
+h4 {
     margin-top: 5px;
-    color:rgb(105, 100, 100);
+    color: rgb(105, 100, 100);
 }
 
-button{
+button {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-size: 15px;
-    border: 1px solid rgb(173, 172, 172,0.3);
+    border: 1px solid rgba(173, 172, 172, 0.3);
     padding: 10px 15px;
     border-radius: 10px;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: transform 0.25s ease-in-out;
 }
 
-.copy-button span{
+button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: rgba(200, 200, 200, 0.15);
+    z-index: -1;
+    transition: width 0.3s ease;
+}
+
+button:hover::after {
+    width: 100%;
+}
+
+button:hover {
+    transform: scale(1.07) rotate(-1deg);
+}
+
+.copy-button span,
+.gen-button span {
     font-size: 18px;
     margin-right: 9px;
 }
 
-.gen-button span{
-    font-size: 18px;
-    margin-right: 9px;
-}
-
-.gen-button{
+.gen-button {
     background-color: rgb(159, 191, 223);
 }
 
-.button-container{
+.button-container {
     display: flex;
     justify-content: space-between;
 }
 
-.right-buttons{
+.right-buttons {
     display: flex;
-    gap:15px
+    gap: 15px;
 }
 
-.color-container{
+.color-container {
     width: 750px;
     height: 95px;
     display: flex;

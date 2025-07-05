@@ -1,18 +1,53 @@
-.color-preview{
+.color-preview {
     width: 55px;
     height: 55px;
     border-radius: 50%;
     border: 3px solid rgb(225, 222, 222);
     box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.14), 0 4px 15px 0 rgba(0, 0, 0, 0.13);
+    animation: floatPop 0.6s ease-out forwards;
+    transition: transform 0.25s ease, box-shadow 0.3s ease;
+}
 
+.color-preview:hover {
+  transform: translateY(-6px) scale(1.1);
+  box-shadow:
+    0 0 6px rgba(0, 0, 0, 0.1),       
+    0 0 8px rgba(0, 0, 0, 0.05),     
+    0 0 7px currentColor,            
+    0 0 9px currentColor;            
+}
+
+@keyframes floatPop {
+    0% {
+        transform: scale(0) translateY(20px);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.1) translateY(-5px);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) translateY(0);
+    }
 }
 
 .color-preview-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .color-label {
-  margin-top: 8px;
+    margin-top: 8px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    opacity: 0;
+    animation: labelFade 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes labelFade {
+    to {
+        opacity: 1;
+    }
 }
