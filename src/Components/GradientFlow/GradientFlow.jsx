@@ -26,6 +26,18 @@ function GradientFlow() {
     setBgApplied(!bgApplied);
   };
 
+  const copyGradientToClipboard = () => {
+    const gradient = `linear-gradient(to right, ${colors.join(", ")})`;
+    navigator.clipboard
+      .writeText(gradient)
+      .then(() => {
+        alert("Gradient copied!");
+      })
+      .catch((err) => {
+        alert("Failed to copy: ", err);
+      });
+  };
+
   return (
     <>
       <div className="container">
@@ -43,7 +55,7 @@ function GradientFlow() {
           })}
         </div>
         <div className="button-container">
-          <button className="copy-button">
+          <button className="copy-button" onClick={copyGradientToClipboard}>
             <span class="material-symbols-outlined">content_copy</span>Copy CSS
           </button>
           <div className="right-buttons">
