@@ -1,5 +1,7 @@
+import GradientFlow from "./Components/GradientFlow/GradientFlow";
+
 function App() {
-  return <div></div>;
+  return <GradientFlow />;
 }
 
 export default App;
