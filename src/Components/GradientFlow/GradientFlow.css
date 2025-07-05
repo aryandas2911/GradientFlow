@@ -1,0 +1,45 @@
+.container{
+    height: 500px;
+    width: 750px;
+    background-color: white;
+    margin: auto;
+    margin-top: 90px;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25), 0 6px 20px 0 rgba(0, 0, 0, 0.23);
+}
+
+h4{
+    color:rgb(105, 100, 100);
+}
+
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 15px;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.copy-button span{
+    font-size: 18px;
+    margin-right: 9px;
+}
+
+.gen-button span{
+    font-size: 18px;
+    margin-right: 9px;
+}
+
+.button-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.right-buttons{
+    display: flex;
+    gap:10px
+}

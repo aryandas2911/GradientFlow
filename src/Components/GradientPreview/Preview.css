@@ -1,0 +1,7 @@
+.preview-container{
+    height: 200px;
+    width: 750px;
+    margin-top: 25px;
+    background-color: rgb(212, 210, 210);
+    border-radius: 10px;
+}
